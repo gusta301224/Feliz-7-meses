@@ -7,14 +7,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
         /* CSS AQUI */
         :root {
-            --cor-principal: #FF6B6B; /* Rosa avermelhado */
-            --cor-secundaria: #FFE6E6; /* Rosa claro */
-            --cor-texto: #333; /* Cinza escuro */
-            --cor-fundo-claro: #F4F4F4; /* Cinza bem claro */
+            --cor-principal: #2C3E50; /* Azul marinho escuro */
+            --cor-secundaria: #4A657D; /* Azul acinzentado médio */
+            --cor-texto: #E0E0E0; /* Cinza claro para texto em fundo escuro */
+            --cor-fundo-claro: #34495E; /* Azul cinza escuro para fundo */
             --font-titulo: 'Pacifico', cursive;
             --font-geral: 'Quicksand', sans-serif;
         }
@@ -22,17 +23,22 @@
         body {
             margin: 0;
             font-family: var(--font-geral);
-            color: var(--cor-texto);
+            color: var(--cor-texto); /* Texto claro no fundo escuro */
             line-height: 1.6;
-            background-color: var(--cor-fundo-claro);
+            background-color: var(--cor-fundo-claro); /* Fundo principal escuro */
             overflow-x: hidden; /* Evita barra de rolagem horizontal */
         }
 
         h1, h2, h3 {
             font-family: var(--font-titulo);
-            color: var(--cor-principal);
+            color: var(--cor-principal); /* Títulos podem ser um pouco mais claros ou manter destaque */
             text-align: center;
             margin-bottom: 20px;
+        }
+        
+        /* Ajuste para títulos no header e telas de boas-vindas para ficarem brancos */
+        header h1, #tela-boas-vindas h1 {
+            color: white;
         }
 
         /* --- ESTILOS DA TELA DE BOAS-VINDAS --- */
@@ -41,7 +47,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh; /* Ocupa a altura total da tela */
-            background: linear-gradient(135deg, var(--cor-principal), var(--cor-secundaria)); /* Gradiente suave */
+            background: linear-gradient(135deg, #1C2833, var(--cor-principal)); /* Gradiente mais escuro */
             color: white;
             text-align: center;
             padding: 20px;
@@ -50,10 +56,10 @@
         }
 
         .boas-vindas-conteudo {
-            background-color: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente */
+            background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente mais escuro */
             padding: 40px 60px;
             border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra mais intensa */
             max-width: 600px;
             animation: fadeIn 1.5s ease-out; /* Animação de entrada */
             text-align: left; /* Alinha o texto à esquerda dentro do container */
@@ -70,7 +76,7 @@
             font-size: 1.1em; /* Ajustei o tamanho para o texto longo */
             margin-bottom: 20px; /* Espaçamento entre parágrafos */
             color: #FFF; /* Branco puro */
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Uma leve sombra para destaque */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Uma leve sombra para destaque mais intenso */
             line-height: 1.8; /* Aumenta o espaçamento entre linhas para melhor leitura */
             text-align: justify; /* Justifica o texto para um bloco mais limpo */
         }
@@ -84,7 +90,7 @@
 
         #btn-comecar {
             background-color: white;
-            color: var(--cor-principal);
+            color: var(--cor-principal); /* Cor do botão agora combina com o novo principal */
             border: none;
             padding: 15px 30px;
             font-size: 1.1em;
@@ -98,8 +104,8 @@
         }
 
         #btn-comecar:hover {
-            background-color: var(--cor-texto);
-            color: white;
+            background-color: var(--cor-texto); /* Texto principal claro */
+            color: var(--cor-principal); /* Mudar para a cor principal do azul escuro */
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
@@ -121,7 +127,7 @@
         }
 
         header {
-            background-color: var(--cor-principal);
+            background-color: var(--cor-principal); /* Cor principal escura */
             color: white;
             padding: 30px 20px;
             text-align: center;
@@ -132,7 +138,7 @@
 
         header h1 {
             font-size: 2.8em;
-            color: white;
+            color: white; /* Título do header branco */
             margin-bottom: 10px;
         }
 
@@ -142,17 +148,22 @@
         }
 
         section {
-            background-color: white;
+            background-color: var(--cor-secundaria); /* Seções em azul médio */
             padding: 30px;
             border-radius: 10px;
             margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Sombra mais visível */
+            color: white; /* Texto das seções em branco para contraste */
+        }
+
+        section h2, section h3 {
+            color: white; /* Títulos das seções brancos */
         }
 
         hr {
             border: 0;
             height: 1px;
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)); /* Linha divisória mais clara */
             margin: 50px 0;
         }
 
@@ -160,7 +171,7 @@
             text-align: center;
             padding: 20px;
             margin-top: 40px;
-            color: #777;
+            color: #AAA; /* Tom de cinza mais claro para o footer */
             font-size: 0.9em;
         }
 
@@ -184,12 +195,12 @@
             height: auto;
             border-radius: 8px;
             margin: 20px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra um pouco mais forte */
         }
 
         .evento-linha-do-tempo h3 {
-            font-family: var(--font-geral); /* Usar fonte geral para subtítulos */
-            color: var(--cor-principal);
+            font-family: var(--font-geral);
+            color: white; /* Títulos dos eventos brancos */
             font-size: 1.5em;
             margin-bottom: 10px;
         }
@@ -197,18 +208,18 @@
         .evento-linha-do-tempo p {
             margin-bottom: 10px;
             font-size: 1.1em;
-            color: var(--cor-texto);
+            color: white; /* Texto dos eventos brancos */
         }
 
         .evento-linha-do-tempo small {
-            color: #888;
+            color: #CCC; /* Tom de cinza mais claro para datas */
             font-style: italic;
         }
 
         /* Estilo para botões de navegação */
         .botao-navegacao {
             display: inline-block;
-            background-color: var(--cor-principal);
+            background-color: var(--cor-principal); /* Botão principal escuro */
             color: white;
             padding: 12px 25px;
             text-decoration: none;
@@ -216,12 +227,12 @@
             font-weight: bold;
             transition: background-color 0.3s ease, transform 0.3s ease;
             margin-top: 30px; /* Espaço acima do botão */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra mais visível */
             text-align: center; /* Centraliza o texto do botão */
         }
 
         .botao-navegacao:hover {
-            background-color: #E64A4A; /* Um tom um pouco mais escuro de rosa */
+            background-color: #3B5773; /* Um tom um pouco mais claro de azul para hover */
             transform: translateY(-3px);
         }
 
@@ -230,7 +241,6 @@
             display: none; /* ESCONDIDA POR PADRÃO */
             opacity: 0; /* Para transição de opacidade */
             transition: opacity 0.5s ease-in-out; /* Transição suave */
-            /* Remove padding-top/margin-top aqui, pois a rolagem é gerenciada pela pagina-principal */
         }
         #nossas-musicas.visivel {
             display: block; /* Mostra a seção quando a classe 'visivel' é adicionada */
@@ -242,23 +252,75 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 30px;
-            background-color: var(--cor-fundo-claro);
+            background-color: var(--cor-fundo-claro); /* Fundo da caixa da música como fundo principal escuro */
             padding: 20px;
             border-radius: 8px;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); /* Sombra interna mais escura */
         }
 
         .musica h3 {
             font-family: var(--font-geral);
-            color: var(--cor-principal);
+            color: white; /* Títulos das músicas brancos */
             font-size: 1.4em;
             margin-bottom: 15px;
         }
 
+        /* Esconde o player de áudio padrão */
         .musica audio {
+            display: none;
+        }
+
+        /* Estilos do player de áudio customizado */
+        .custom-audio-player {
+            display: flex;
+            align-items: center;
             width: 100%;
             max-width: 400px;
-            margin-bottom: 15px;
+            background-color: var(--cor-principal); /* Player com a cor principal escura */
+            border-radius: 50px;
+            padding: 8px 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            margin-top: 15px;
+        }
+
+        .play-pause-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8em; /* Aumenta o tamanho do ícone */
+            cursor: pointer;
+            outline: none;
+            padding: 0 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .play-pause-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .progress-bar-container {
+            flex-grow: 1;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.4); /* Barra de progresso base mais clara */
+            border-radius: 5px;
+            margin: 0 10px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: #E0E0E0; /* Cor da barra preenchida (cinza claro) */
+            border-radius: 5px;
+            transition: width 0.1s linear; /* Animação suave para o progresso */
+        }
+
+        .time-display {
+            color: white;
+            font-size: 0.8em;
+            min-width: 70px; /* Garante espaço para o tempo */
+            text-align: right;
         }
 
         /* --- Estilos para Tela Final --- */
@@ -270,17 +332,19 @@
             align-items: center;
             text-align: center;
             padding-bottom: 50px; /* Mais espaço no final da página */
+            color: var(--cor-texto); /* Texto claro no fundo escuro */
         }
 
         #pagina-final h2 {
             font-size: 2.5em;
             margin-bottom: 30px;
+            color: white; /* Título final branco */
         }
 
         #pagina-final h3 {
             font-family: var(--font-geral);
             font-size: 1.8em;
-            color: var(--cor-texto); /* Usa a cor de texto padrão para a pergunta */
+            color: white; /* Título da pergunta branco */
             margin-bottom: 20px;
             line-height: 1.4;
         }
@@ -290,11 +354,11 @@
             line-height: 1.8;
             max-width: 700px;
             margin: 0 auto 30px auto; /* Centraliza e adiciona margem inferior */
-            color: var(--cor-texto);
-            background-color: var(--cor-secundaria);
+            color: #E0E0E0; /* Texto do parágrafo em cinza claro */
+            background-color: var(--cor-secundaria); /* Fundo do parágrafo em azul médio */
             padding: 25px;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra mais visível */
             text-align: justify;
         }
 
@@ -305,7 +369,7 @@
             display: block;
             margin: 30px auto 0 auto; /* Espaçamento acima e centralização */
             border-radius: 10px; /* Opcional: para deixar a imagem com bordas arredondadas */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: sombra suave */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: sombra suave */
         }
 
         /* Responsividade geral */
@@ -338,6 +402,18 @@
             #imagem-final {
                 max-width: 95%;
             }
+            .custom-audio-player {
+                padding: 6px 10px;
+            }
+            .play-pause-btn {
+                font-size: 1.5em;
+            }
+            .progress-bar-container {
+                height: 6px;
+            }
+            .time-display {
+                font-size: 0.7em;
+            }
         }
     </style>
 </head>
@@ -354,7 +430,7 @@
 
     <div id="pagina-principal" class="pagina">
         <header>
-            <h1>Para a Minha Pincesa!</h1>
+            <h1>Para a Minha Mais Bela História!</h1>
             <p>Um pequeno cantinho nosso, cheio de memórias, risadas e muito amor.</p>
         </header>
 
@@ -426,46 +502,66 @@
 
             <section id="nossas-musicas">
                 <h2>Nossas Músicas do Coração 🎶</h2>
-                <p>A trilha sonora do nosso amor. Cada música, representando a gente de aguma forma, um pouco da nossa história. Aperta o play e sente a vibe!</p>
+                <p>A trilha sonora do nosso amor. Aperta o play e sente a vibe!</p>
 
                 <div class="musica">
                     <h3>Cantada</h3>
-                    <audio controls>
-                        <source src="musicas/musica1.mp3" type="audio/mpeg">
-                        Seu navegador não suporta o elemento de áudio.
-                    </audio>
+                    <audio src="musicas/musica1.mp3" preload="metadata"></audio>
+                    <div class="custom-audio-player">
+                        <button class="play-pause-btn" data-track="0"><i class="fas fa-play"></i></button>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div class="time-display">0:00 / 0:00</div>
+                    </div>
                 </div>
 
                 <div class="musica">
                     <h3>A Nossa Praia</h3>
-                    <audio controls>
-                        <source src="musicas/musica2.mp3" type="audio/mpeg">
-                        Seu navegador não suporta o elemento de áudio.
-                    </audio>
+                    <audio src="musicas/musica2.mp3" preload="metadata"></audio>
+                    <div class="custom-audio-player">
+                        <button class="play-pause-btn" data-track="1"><i class="fas fa-play"></i></button>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div class="time-display">0:00 / 0:00</div>
+                    </div>
                 </div>
 
                 <div class="musica">
                     <h3>Aham</h3>
-                    <audio controls>
-                        <source src="musicas/musica3.mp3" type="audio/mpeg">
-                        Seu navegador não suporta o elemento de áudio.
-                    </audio>
+                    <audio src="musicas/musica3.mp3" preload="metadata"></audio>
+                    <div class="custom-audio-player">
+                        <button class="play-pause-btn" data-track="2"><i class="fas fa-play"></i></button>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div class="time-display">0:00 / 0:00</div>
+                    </div>
                 </div>
 
                 <div class="musica">
                     <h3>Princesa</h3>
-                    <audio controls>
-                        <source src="musicas/musica4.mp3" type="audio/mpeg">
-                        Seu navegador não suporta o elemento de audio.
-                    </audio>
+                    <audio src="musicas/musica4.mp3" preload="metadata"></audio>
+                    <div class="custom-audio-player">
+                        <button class="play-pause-btn" data-track="3"><i class="fas fa-play"></i></button>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div class="time-display">0:00 / 0:00</div>
+                    </div>
                 </div>
 
                 <div class="musica">
                     <h3>Chuva de Arroz</h3>
-                    <audio controls>
-                        <source src="musicas/musica5.mp3" type="audio/mpeg">
-                        Seu navegador não suporta o elemento de áudio.
-                    </audio>
+                    <audio src="musicas/musica5.mp3" preload="metadata"></audio>
+                    <div class="custom-audio-player">
+                        <button class="play-pause-btn" data-track="4"><i class="fas fa-play"></i></button>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div class="time-display">0:00 / 0:00</div>
+                    </div>
                 </div>
 
                 <div style="text-align: center;">
@@ -497,12 +593,93 @@
             const btnComecar = document.getElementById('btn-comecar');
             const telaBoasVindas = document.getElementById('tela-boas-vindas');
             const paginaPrincipal = document.getElementById('pagina-principal');
-            const linhaDoTempo = document.getElementById('linha-do-tempo'); // Nova variável
-            const nossasMusicas = document.getElementById('nossas-musicas'); // Nova variável
+            const linhaDoTempo = document.getElementById('linha-do-tempo');
+            const nossasMusicas = document.getElementById('nossas-musicas');
             const paginaFinal = document.getElementById('pagina-final');
-            const btnMostrarMusicas = document.getElementById('btn-mostrar-musicas'); // Novo botão para músicas
+            const btnMostrarMusicas = document.getElementById('btn-mostrar-musicas');
             const irParaTelaFinalBtn = document.getElementById('ir-para-tela-final');
             const voltarParaInicioBtn = document.getElementById('voltar-para-inicio');
+
+            // Seleciona todos os elementos de áudio e seus controles
+            const audioElements = document.querySelectorAll('.musica audio');
+            const playPauseBtns = document.querySelectorAll('.play-pause-btn');
+            const progressBars = document.querySelectorAll('.progress-bar');
+            const progressBarContainers = document.querySelectorAll('.progress-bar-container');
+            const timeDisplays = document.querySelectorAll('.time-display');
+
+            let currentPlayingAudio = null; // Armazena a referência do áudio que está tocando
+            let currentPlayingButton = null; // Armazena a referência do botão de play/pause da música atual
+
+            // Função para formatar o tempo (00:00)
+            function formatTime(seconds) {
+                const minutes = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+            }
+
+            // Adiciona listeners para cada player de áudio
+            audioElements.forEach((audio, index) => {
+                const playPauseBtn = playPauseBtns[index];
+                const progressBar = progressBars[index];
+                const progressBarContainer = progressBarContainers[index];
+                const timeDisplay = timeDisplays[index];
+                const playIcon = playPauseBtn.querySelector('.fas');
+
+                // Atualiza o tempo e a barra de progresso
+                audio.addEventListener('timeupdate', () => {
+                    const progress = (audio.currentTime / audio.duration) * 100;
+                    progressBar.style.width = `${progress}%`;
+                    timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+                });
+
+                // Quando a música termina
+                audio.addEventListener('ended', () => {
+                    playIcon.classList.remove('fa-pause');
+                    playIcon.classList.add('fa-play');
+                    currentPlayingAudio = null;
+                    currentPlayingButton = null;
+                    progressBar.style.width = '0%'; // Reseta a barra de progresso
+                    timeDisplay.textContent = `0:00 / ${formatTime(audio.duration)}`; // Exibe 0:00 / Duração
+                });
+
+                // Quando os metadados são carregados (para obter a duração)
+                audio.addEventListener('loadedmetadata', () => {
+                    timeDisplay.textContent = `0:00 / ${formatTime(audio.duration)}`;
+                });
+
+                // Clique no botão Play/Pause
+                playPauseBtn.addEventListener('click', () => {
+                    // Pausa a música atualmente tocando, se houver
+                    if (currentPlayingAudio && currentPlayingAudio !== audio) {
+                        currentPlayingAudio.pause();
+                        currentPlayingButton.querySelector('.fas').classList.remove('fa-pause');
+                        currentPlayingButton.querySelector('.fas').classList.add('fa-play');
+                    }
+
+                    if (audio.paused) {
+                        audio.play();
+                        playIcon.classList.remove('fa-play');
+                        playIcon.classList.add('fa-pause');
+                        currentPlayingAudio = audio;
+                        currentPlayingButton = playPauseBtn;
+                    } else {
+                        audio.pause();
+                        playIcon.classList.remove('fa-pause');
+                        playIcon.classList.add('fa-play');
+                        currentPlayingAudio = null;
+                        currentPlayingButton = null;
+                    }
+                });
+
+                // Clicar na barra de progresso para mudar o tempo da música
+                progressBarContainer.addEventListener('click', (e) => {
+                    const clickX = e.clientX - progressBarContainer.getBoundingClientRect().left;
+                    const width = progressBarContainer.offsetWidth;
+                    const duration = audio.duration;
+                    audio.currentTime = (clickX / width) * duration;
+                });
+            });
+
 
             // --- Gerenciamento da Tela de Boas-Vindas ---
             if (btnComecar && telaBoasVindas && paginaPrincipal) {
@@ -520,8 +697,17 @@
 
             // --- Mostrar a seção de Músicas e rolar suavemente ---
             if (btnMostrarMusicas && nossasMusicas) {
-                btnMostrarMusicas.addEventListener('click', function(e) {
+                    btnMostrarMusicas.addEventListener('click', function(e) {
                     e.preventDefault(); // Impede o comportamento padrão do link
+
+                    // Pausa qualquer música que esteja tocando antes de rolar
+                    if (currentPlayingAudio) {
+                        currentPlayingAudio.pause();
+                        currentPlayingButton.querySelector('.fas').classList.remove('fa-pause');
+                        currentPlayingButton.querySelector('.fas').classList.add('fa-play');
+                        currentPlayingAudio = null;
+                        currentPlayingButton = null;
+                    }
 
                     nossasMusicas.classList.add('visivel'); // Adiciona a classe para mostrar a seção
                     
@@ -536,6 +722,15 @@
             if (irParaTelaFinalBtn && paginaPrincipal && paginaFinal) {
                 irParaTelaFinalBtn.addEventListener('click', (e) => {
                     e.preventDefault();
+                    // Pausa qualquer música que esteja tocando antes de mudar de página
+                    if (currentPlayingAudio) {
+                        currentPlayingAudio.pause();
+                        currentPlayingButton.querySelector('.fas').classList.remove('fa-pause');
+                        currentPlayingButton.querySelector('.fas').classList.add('fa-play');
+                        currentPlayingAudio = null;
+                        currentPlayingButton = null;
+                    }
+
                     paginaPrincipal.style.opacity = '0'; // Começa a transição de saída
                     paginaPrincipal.addEventListener('transitionend', function handler() {
                         paginaPrincipal.style.display = 'none'; // Esconde a página principal
