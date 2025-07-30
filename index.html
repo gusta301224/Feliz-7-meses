@@ -227,7 +227,14 @@
 
         /* --- Estilos para Músicas --- */
         #nossas-musicas {
-            /* Não precisa de padding-top/margin-top aqui, pois a rolagem é gerenciada pela pagina-principal */
+            display: none; /* ESCONDIDA POR PADRÃO */
+            opacity: 0; /* Para transição de opacidade */
+            transition: opacity 0.5s ease-in-out; /* Transição suave */
+            /* Remove padding-top/margin-top aqui, pois a rolagem é gerenciada pela pagina-principal */
+        }
+        #nossas-musicas.visivel {
+            display: block; /* Mostra a seção quando a classe 'visivel' é adicionada */
+            opacity: 1; /* Torna visível */
         }
 
         .musica {
@@ -347,7 +354,7 @@
 
     <div id="pagina-principal" class="pagina">
         <header>
-            <h1>Para a Minha Mais Bela História!</h1>
+            <h1>Para a Minha Pincesa!</h1>
             <p>Um pequeno cantinho nosso, cheio de memórias, risadas e muito amor.</p>
         </header>
 
@@ -411,7 +418,7 @@
                 </div>
 
                 <div style="text-align: center;">
-                    <a href="#nossas-musicas" class="botao-navegacao scroll-to-section">Próxima Parte</a>
+                    <a href="#nossas-musicas" id="btn-mostrar-musicas" class="botao-navegacao">Próxima Parte</a>
                 </div>
             </section>
 
@@ -419,7 +426,7 @@
 
             <section id="nossas-musicas">
                 <h2>Nossas Músicas do Coração 🎶</h2>
-                <p>A trilha sonora do nosso amor. Aperta o play e sente a vibe!</p>
+                <p>A trilha sonora do nosso amor. Cada música, representando a gente de aguma forma, um pouco da nossa história. Aperta o play e sente a vibe!</p>
 
                 <div class="musica">
                     <h3>Cantada</h3>
@@ -449,7 +456,7 @@
                     <h3>Princesa</h3>
                     <audio controls>
                         <source src="musicas/musica4.mp3" type="audio/mpeg">
-                        Seu navegador não suporta o elemento de áudio.
+                        Seu navegador não suporta o elemento de audio.
                     </audio>
                 </div>
 
@@ -468,7 +475,7 @@
         </main>
 
         <footer>
-            <p>&copy; 2023 - Feito com todo o meu amor para você! ❤️</p>
+            <p>&copy; 2025 - Feito com todo o meu amor para você! ❤️</p>
         </footer>
     </div> <div id="pagina-final" class="pagina">
         <section style="background-color: transparent; box-shadow: none;">
@@ -482,7 +489,7 @@
             </div>
         </section>
         <footer>
-            <p>&copy; 2023 - Feito com todo o meu amor para você! ❤️</p>
+            <p>&copy; 2025 - Feito com todo o meu amor para você! ❤️</p>
         </footer>
     </div> <script>
         /* JAVASCRIPT AQUI */
@@ -490,7 +497,10 @@
             const btnComecar = document.getElementById('btn-comecar');
             const telaBoasVindas = document.getElementById('tela-boas-vindas');
             const paginaPrincipal = document.getElementById('pagina-principal');
+            const linhaDoTempo = document.getElementById('linha-do-tempo'); // Nova variável
+            const nossasMusicas = document.getElementById('nossas-musicas'); // Nova variável
             const paginaFinal = document.getElementById('pagina-final');
+            const btnMostrarMusicas = document.getElementById('btn-mostrar-musicas'); // Novo botão para músicas
             const irParaTelaFinalBtn = document.getElementById('ir-para-tela-final');
             const voltarParaInicioBtn = document.getElementById('voltar-para-inicio');
 
@@ -508,15 +518,19 @@
                 });
             }
 
-            // --- Rolagem Suave para Seções Internas (Linha do Tempo -> Músicas) ---
-            document.querySelectorAll('.scroll-to-section').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+            // --- Mostrar a seção de Músicas e rolar suavemente ---
+            if (btnMostrarMusicas && nossasMusicas) {
+                btnMostrarMusicas.addEventListener('click', function(e) {
+                    e.preventDefault(); // Impede o comportamento padrão do link
+
+                    nossasMusicas.classList.add('visivel'); // Adiciona a classe para mostrar a seção
+                    
+                    // Rola suavemente para a seção de músicas
+                    nossasMusicas.scrollIntoView({
                         behavior: 'smooth'
                     });
                 });
-            });
+            }
 
             // --- Troca para a Tela Final ---
             if (irParaTelaFinalBtn && paginaPrincipal && paginaFinal) {
