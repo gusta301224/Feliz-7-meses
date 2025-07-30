@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para o Amor da Minha Vida ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS AQUI */
+        :root {
+            --cor-principal: #FF6B6B; /* Rosa avermelhado */
+            --cor-secundaria: #FFE6E6; /* Rosa claro */
+            --cor-texto: #333; /* Cinza escuro */
+            --cor-fundo-claro: #F4F4F4; /* Cinza bem claro */
+            --font-titulo: 'Pacifico', cursive;
+            --font-geral: 'Quicksand', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-geral);
+            color: var(--cor-texto);
+            line-height: 1.6;
+            background-color: var(--cor-fundo-claro);
+            overflow-x: hidden; /* Evita barra de rolagem horizontal */
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-titulo);
+            color: var(--cor-principal);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* --- ESTILOS DA TELA DE BOAS-VINDAS --- */
+        #tela-boas-vindas {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ocupa a altura total da tela */
+            background: linear-gradient(135deg, var(--cor-principal), var(--cor-secundaria)); /* Gradiente suave */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: opacity 1s ease-out, visibility 1s ease-out; /* Transição suave */
+        }
+
+        .boas-vindas-conteudo {
+            background-color: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente */
+            padding: 40px 60px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            animation: fadeIn 1.5s ease-out; /* Animação de entrada */
+            text-align: left; /* Alinha o texto à esquerda dentro do container */
+        }
+
+        .boas-vindas-conteudo h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: white; /* Cor do título na tela de boas-vindas */
+            text-align: center; /* Centraliza o título */
+        }
+
+        .boas-vindas-conteudo p {
+            font-size: 1.1em; /* Ajustei o tamanho para o texto longo */
+            margin-bottom: 20px; /* Espaçamento entre parágrafos */
+            color: #FFF; /* Branco puro */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Uma leve sombra para destaque */
+            line-height: 1.8; /* Aumenta o espaçamento entre linhas para melhor leitura */
+            text-align: justify; /* Justifica o texto para um bloco mais limpo */
+        }
+
+        /* Ajuste para o último parágrafo antes do botão */
+        .boas-vindas-conteudo p:last-of-type:not(#btn-comecar + p) {
+            margin-bottom: 30px; /* Ajusta o espaçamento do último parágrafo antes do botão */
+            text-align: center; /* Centraliza a frase do convite */
+        }
+
+
+        #btn-comecar {
+            background-color: white;
+            color: var(--cor-principal);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: block; /* Para o botão ocupar a largura total e ser centralizado com margin auto */
+            margin: 0 auto; /* Centraliza o botão */
+        }
+
+        #btn-comecar:hover {
+            background-color: var(--cor-texto);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- ESTILOS GERAIS DAS "PÁGINAS" --- */
+        .pagina {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            display: none; /* Inicia escondida */
+            opacity: 0; /* Para transição de opacidade */
+            transition: opacity 0.5s ease-in-out; /* Transição suave */
+            box-sizing: border-box;
+        }
+
+        .pagina.ativa {
+            display: block; /* Mostra a página ativa */
+            opacity: 1; /* Torna visível */
+        }
+
+        header {
+            background-color: var(--cor-principal);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+            margin: 50px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Estilos para Linha do Tempo --- */
+        .evento-linha-do-tempo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .evento-linha-do-tempo img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .evento-linha-do-tempo h3 {
+            font-family: var(--font-geral); /* Usar fonte geral para subtítulos */
+            color: var(--cor-principal);
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .evento-linha-do-tempo p {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: var(--cor-texto);
+        }
+
+        .evento-linha-do-tempo small {
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Estilo para botões de navegação */
+        .botao-navegacao {
+            display: inline-block;
+            background-color: var(--cor-principal);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 30px; /* Espaço acima do botão */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center; /* Centraliza o texto do botão */
+        }
+
+        .botao-navegacao:hover {
+            background-color: #E64A4A; /* Um tom um pouco mais escuro de rosa */
+            transform: translateY(-3px);
+        }
+
+        /* --- Estilos para Músicas --- */
+        #nossas-musicas {
+            /* Não precisa de padding-top/margin-top aqui, pois a rolagem é gerenciada pela pagina-principal */
+        }
+
+        .musica {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            background-color: var(--cor-fundo-claro);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .musica h3 {
+            font-family: var(--font-geral);
+            color: var(--cor-principal);
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .musica audio {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 15px;
+        }
+
+        /* --- Estilos para Tela Final --- */
+        #pagina-final { /* Renomeado para seguir o padrão de pagina-principal */
+            min-height: calc(100vh - 80px); /* Ocupa quase toda a altura da tela */
+            display: flex; /* Para centralizar o conteúdo */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 50px; /* Mais espaço no final da página */
+        }
+
+        #pagina-final h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        #pagina-final h3 {
+            font-family: var(--font-geral);
+            font-size: 1.8em;
+            color: var(--cor-texto); /* Usa a cor de texto padrão para a pergunta */
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        #pagina-final p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px auto; /* Centraliza e adiciona margem inferior */
+            color: var(--cor-texto);
+            background-color: var(--cor-secundaria);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            text-align: justify;
+        }
+
+        /* Estilo para a imagem final */
+        #imagem-final {
+            max-width: 80%; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+            display: block;
+            margin: 30px auto 0 auto; /* Espaçamento acima e centralização */
+            border-radius: 10px; /* Opcional: para deixar a imagem com bordas arredondadas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: sombra suave */
+        }
+
+        /* Responsividade geral */
+        @media (max-width: 768px) {
+            .boas-vindas-conteudo {
+                padding: 30px;
+            }
+
+            .boas-vindas-conteudo h1 {
+                font-size: 2.2em;
+            }
+
+            .boas-vindas-conteudo p {
+                font-size: 1em;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+            #pagina-final h2 {
+                font-size: 2em;
+            }
+            #pagina-final h3 {
+                font-size: 1.5em;
+            }
+            #pagina-final p {
+                font-size: 1em;
+                padding: 15px;
+            }
+            #imagem-final {
+                max-width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section id="tela-boas-vindas">
+        <div class="boas-vindas-conteudo">
+            <h1>Olá, meu amor!</h1>
+            <p>Oiii minha VIDAAA, como vc ta?? Bom dia, boa tarde, Boa noite. Bom, 7 meses juntos, quem diria, que estaríamos aqui, perto de 1 ano juntos, ouso dizer que não foi fácil, chegar até aqui, muitas brigas, discussões, desentendimentos, enfim, várias e várias coisas, que nos atrapalharam, mas, não desistimos um do outro, continuamos lutando, juntos, para estar aonde estamos hoje. Cada mês ao seu lado, cada dia, cada milissegundos, é muito importante pra mim, e o mais especial de todos, na verdade, tudo com você é especial. Só tenho a agradecer, por tudo que você faz por mim meu amor, cada presente, afeto, cada mínima coisinha, eu agradeço todo dia, todo domingo na igreja, por ter você, na minha vida. Muito obrigado meu amor, a minha motivação de todos os dias, "a minha luz na escuridão"!!! Feliz 7 meses meu amor, você sempre será, o **GRANDE AMOR DA MINHA VIDA**! EU TE AMOOO MINHA PRINCESA!!</p>
+            <p>Que tal começarmos nossa jornada?</p>
+            <button id="btn-comecar">Vamos Começar?</button>
+        </div>
+    </section>
+
+    <div id="pagina-principal" class="pagina">
+        <header>
+            <h1>Para a Minha Mais Bela História!</h1>
+            <p>Um pequeno cantinho nosso, cheio de memórias, risadas e muito amor.</p>
+        </header>
+
+        <main>
+            <section id="linha-do-tempo">
+                <h2>Nossa Linha do Tempo</h2>
+                <div class="evento-linha-do-tempo">
+                    <h3>🗓️ Onde tudo começou</h3>
+                    <img src="imagens/1.png" alt="Primeira foto de vocês juntos">
+                    <p>Onde tudo começou, e não dá pra negar que eu já estava me apaixonando por ti. Desde esse dia, meu coração já acelerava só de estar perto de ti!</p>
+                    <small>30 de novembro de 2024</small>
+                </div>
+
+                <div class="evento-linha-do-tempo">
+                    <h3>🙏 Juntos no caminho de Deus</h3>
+                    <img src="imagens/2.png" alt="Foto de vocês juntos na igreja">
+                    <p>Juntos até no caminho de Deus, onde nossa história com Deus começa!</p>
+                    <small>8 de dezembro de 2024</small>
+                </div>
+
+                <div class="evento-linha-do-tempo">
+                    <h3>✨ Primeiro Ano Novo Juntos</h3>
+                    <img src="imagens/3.png" alt="Foto de vocês no Ano Novo">
+                    <p>Aqui já estava completamente apaixonado por ti, primeiro final de ano juntos, 00h, e eu estava ao seu lado!</p>
+                    <small>1 de janeiro de 2025</small>
+                </div>
+
+                <div class="evento-linha-do-tempo">
+                    <h3>✈️ Nossa Primeira Viagem</h3>
+                    <img src="imagens/4.png" alt="Foto da primeira viagem de vocês">
+                    <p>A primeira viagem a gente nunca esquece, e essa nunca vou esquecer. Momentos incríveis tive com você nesses dias!</p>
+                    <small>4 de janeiro de 2025</small>
+                </div>
+
+                <div class="evento-linha-do-tempo">
+                    <h3>🎂 Seu Aniversário, Meu Amor!</h3>
+                    <img src="imagens/5.png" alt="Foto do aniversário dela">
+                    <p>Seu aniversário, dia em que Deus e a minha sogra me deram o amor da minha vida, e eu estou ao seu lado, como sempre prometido!</p>
+                    <small>10 de maio de 2025</small>
+                </div>
+
+                <div class="evento-linha-do-tempo">
+                    <h3>🎤 Nosso Primeiro Show</h3>
+                    <img src="imagens/6.png" alt="Foto de vocês no show">
+                    <p>5 meses juntos já, e nosso primeiro show! Uma das melhores experiências que já tive, e você esteve lá!</p>
+                    <small>30 de maio de 2025</small>
+                </div>
+
+                <div class="evento-linha-do-tempo">
+                    <h3>🚗 Depois da Longa Viagem</h3>
+                    <img src="imagens/7.png" alt="Foto de vocês depois da viagem">
+                    <p>Juntos, depois de uma longa viagem, algumas brigas ksks, mas você sendo quem está ao meu lado!</p>
+                    <small>22 de julho de 2025</small>
+                </div>
+
+                <div class="evento-linha-do-tempo">
+                    <h3>💖 Hoje, Juntos e Felizes!</h3>
+                    <img src="imagens/8.png" alt="Foto de vocês no passeio atual">
+                    <p>Hoje estamos aqui, juntos, felizes, num passeio que será lembrado para sempre, e você ainda sim, é o grande amor da minha vida!!</p>
+                    <small>26 de julho de 2025</small>
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="#nossas-musicas" class="botao-navegacao scroll-to-section">Próxima Parte</a>
+                </div>
+            </section>
+
+            <hr>
+
+            <section id="nossas-musicas">
+                <h2>Nossas Músicas do Coração 🎶</h2>
+                <p>A trilha sonora do nosso amor. Aperta o play e sente a vibe!</p>
+
+                <div class="musica">
+                    <h3>Cantada</h3>
+                    <audio controls>
+                        <source src="musicas/musica1.mp3" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </div>
+
+                <div class="musica">
+                    <h3>A Nossa Praia</h3>
+                    <audio controls>
+                        <source src="musicas/musica2.mp3" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </div>
+
+                <div class="musica">
+                    <h3>Aham</h3>
+                    <audio controls>
+                        <source src="musicas/musica3.mp3" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </div>
+
+                <div class="musica">
+                    <h3>Princesa</h3>
+                    <audio controls>
+                        <source src="musicas/musica4.mp3" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </div>
+
+                <div class="musica">
+                    <h3>Chuva de Arroz</h3>
+                    <audio controls>
+                        <source src="musicas/musica5.mp3" type="audio/mpeg">
+                        Seu navegador não suporta o elemento de áudio.
+                    </audio>
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="#" id="ir-para-tela-final" class="botao-navegacao">Mensagem Final</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 - Feito com todo o meu amor para você! ❤️</p>
+        </footer>
+    </div> <div id="pagina-final" class="pagina">
+        <section style="background-color: transparent; box-shadow: none;">
+            <h2>Uma Pergunta Especial para Você...</h2>
+            <h3>Pq você nunca deixa de lutar por mim?</h3>
+            <p>Bom, esses dias, vc fez essa pergunta para mim, e eu te devi uma resposta, mas, na vrdd, eu já tinha a resposta, bem ali do meu lado, essa resposta, é simplesmente vc, vc é o motivo, deu nunca deixar de vc, o seu jeito de cuidar de mim, de me amar, de fazer as coisas por mim, e tbm de lutar, faz com que eu nunca, deixe de lutar por vc, pq sei que vc tbm lutaria por mim até o fim. Mas, pq ainda sim, fica a pergunta, pq eu luto por vc, se isso pode cansar, desgastar, ficar cansativo, mas, como diz "1 Coríntios 13:4-7 :O amor é paciente, o amor é bondoso. Não inveja, não se vangloria, não se orgulha. Não maltrata, não procura seus interesses, não se irrita facilmente, não guarda rancor. O amor não se alegra com a injustiça, mas se alegra com a verdade. *Tudo sofre, tudo crê, tudo espera, tudo suporta.*", ent eu prefiro sofrer o difícil ao seu lado, crê pela nossa paz, esperar o tempo necessário, mas ao seu lado, e suportar, todos e todas que estiver contra a gente. *Sempre será eu por vc, vc por mim, e duas acima de nos*. Ent meu amor, esta ai, sua resposta, vc me motiva, para eu não deixar de utar por vc, e nunca irei deixar. EU TE AMOO DMS MINHA NENEM!!♥️💍🥺</p>
+            <img id="imagem-final" src="final.png" alt="Mensagem Final">
+            <p>Com todo o meu amor, para sempre seu.</p>
+            <div style="text-align: center;">
+                <a href="#" id="voltar-para-inicio" class="botao-navegacao" style="background-color: #555;">Voltar ao Início</a>
+            </div>
+        </section>
+        <footer>
+            <p>&copy; 2023 - Feito com todo o meu amor para você! ❤️</p>
+        </footer>
+    </div> <script>
+        /* JAVASCRIPT AQUI */
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnComecar = document.getElementById('btn-comecar');
+            const telaBoasVindas = document.getElementById('tela-boas-vindas');
+            const paginaPrincipal = document.getElementById('pagina-principal');
+            const paginaFinal = document.getElementById('pagina-final');
+            const irParaTelaFinalBtn = document.getElementById('ir-para-tela-final');
+            const voltarParaInicioBtn = document.getElementById('voltar-para-inicio');
+
+            // --- Gerenciamento da Tela de Boas-Vindas ---
+            if (btnComecar && telaBoasVindas && paginaPrincipal) {
+                btnComecar.addEventListener('click', () => {
+                    telaBoasVindas.style.opacity = '0';
+                    telaBoasVindas.style.visibility = 'hidden';
+
+                    telaBoasVindas.addEventListener('transitionend', () => {
+                        telaBoasVindas.style.display = 'none';
+                        paginaPrincipal.classList.add('ativa'); // Ativa a página principal
+                        window.scrollTo({ top: 0, behavior: 'smooth' }); // Rola para o topo
+                    }, { once: true });
+                });
+            }
+
+            // --- Rolagem Suave para Seções Internas (Linha do Tempo -> Músicas) ---
+            document.querySelectorAll('.scroll-to-section').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // --- Troca para a Tela Final ---
+            if (irParaTelaFinalBtn && paginaPrincipal && paginaFinal) {
+                irParaTelaFinalBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    paginaPrincipal.style.opacity = '0'; // Começa a transição de saída
+                    paginaPrincipal.addEventListener('transitionend', function handler() {
+                        paginaPrincipal.style.display = 'none'; // Esconde a página principal
+                        paginaPrincipal.removeEventListener('transitionend', handler);
+
+                        paginaFinal.style.display = 'block'; // Mostra a página final
+                        setTimeout(() => { // Pequeno delay para a opacidade funcionar
+                            paginaFinal.classList.add('ativa'); // Ativa a página final com fade-in
+                            window.scrollTo({ top: 0, behavior: 'smooth' }); // Rola para o topo da nova "página"
+                        }, 10);
+                    }, { once: true });
+                });
+            }
+
+            // --- Voltar para a Tela Principal ---
+            if (voltarParaInicioBtn && paginaPrincipal && paginaFinal) {
+                voltarParaInicioBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    paginaFinal.style.opacity = '0'; // Começa a transição de saída
+                    paginaFinal.addEventListener('transitionend', function handler() {
+                        paginaFinal.style.display = 'none'; // Esconde a página final
+                        paginaFinal.removeEventListener('transitionend', handler);
+
+                        paginaPrincipal.style.display = 'block'; // Mostra a página principal
+                        setTimeout(() => { // Pequeno delay para a opacidade funcionar
+                            paginaPrincipal.classList.add('ativa'); // Ativa a página principal com fade-in
+                            window.scrollTo({ top: 0, behavior: 'smooth' }); // Rola para o topo
+                        }, 10);
+                    }, { once: true });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
