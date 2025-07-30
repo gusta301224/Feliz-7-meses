@@ -265,6 +265,16 @@
             margin-bottom: 15px;
         }
 
+        /* Estilo para as descrições/letras das músicas */
+        .musica-descricao {
+            font-size: 0.95em;
+            color: #DDD; /* Um cinza bem claro para o texto da descrição */
+            text-align: center;
+            margin-bottom: 15px; /* Espaço entre a descrição e o player */
+            line-height: 1.5;
+            max-width: 80%; /* Limita a largura para melhor leitura */
+        }
+
         /* Esconde o player de áudio padrão */
         .musica audio {
             display: none;
@@ -414,6 +424,9 @@
             .time-display {
                 font-size: 0.7em;
             }
+            .musica-descricao {
+                font-size: 0.85em; /* Reduz um pouco o tamanho em telas menores */
+            }
         }
     </style>
 </head>
@@ -430,7 +443,7 @@
 
     <div id="pagina-principal" class="pagina">
         <header>
-            <h1>Para a Minha Mais llinda Princesa!</h1>
+            <h1>Para a Minha Mais Linda Princesa!</h1>
             <p>Um pequeno cantinho nosso, cheio de memórias, risadas e muito amor.</p>
         </header>
 
@@ -502,10 +515,11 @@
 
             <section id="nossas-musicas">
                 <h2>Nossas Músicas do Coração 🎶</h2>
-                <p>A trilha sonora do nosso amor.Onde cada musiica faz parte da nossa história. Aperta o play e sente a vibe!</p>
+                <p>A trilha sonora do nosso amor. Onde cada musica representa um pouco da gente, cada parte da noaa história. Aperta o play e sente a vibe!</p>
 
                 <div class="musica">
                     <h3>Cantada</h3>
+                    <p class="musica-descricao">A gente só saiu pra jantar e foi ficando</p>
                     <audio src="musicas/musica1.mp3" preload="metadata"></audio>
                     <div class="custom-audio-player">
                         <button class="play-pause-btn" data-track="0"><i class="fas fa-play"></i></button>
@@ -518,6 +532,7 @@
 
                 <div class="musica">
                     <h3>A Nossa Praia</h3>
+                    <p class="musica-descricao">A nossa praia é amar, beijar<br>Ficar de boa frente ao mar</p>
                     <audio src="musicas/musica2.mp3" preload="metadata"></audio>
                     <div class="custom-audio-player">
                         <button class="play-pause-btn" data-track="1"><i class="fas fa-play"></i></button>
@@ -530,6 +545,7 @@
 
                 <div class="musica">
                     <h3>Aham</h3>
+                    <p class="musica-descricao">Se eu gosto de te namorar **aham, aham**<br>Se eu tô doido pra te beijar **aham, aham**</p>
                     <audio src="musicas/musica3.mp3" preload="metadata"></audio>
                     <div class="custom-audio-player">
                         <button class="play-pause-btn" data-track="2"><i class="fas fa-play"></i></button>
@@ -542,6 +558,24 @@
 
                 <div class="musica">
                     <h3>Princesa</h3>
+                    <p class="musica-descricao">
+                        Deixa eu acalmar suas incertezas<br>
+                        Seu medo de amar é normal<br>
+                        Quem passou por aí te fez mal, mas passou<br>
+                        Eu vou fazer você acreditar no amor<br><br>
+                        **Princesa, descansa, me ama**<br>
+                        Me experimenta de remédio pro teu medo<br>
+                        De oito em oito segundos, te dou um beijo<br>
+                        Eu vou curar seu medo<br><br>
+                        Me fala onde é que tá doendo<br>
+                        Me mostra onde foi que machucou<br>
+                        Que eu vou soprar, beijar<br>
+                        Beijar, te amar até curar a dor<br>
+                        Me fala onde é que tá doendo<br>
+                        Me mostra onde foi que machucou<br>
+                        Que eu vou soprar, beijar<br>
+                        Beijar, te amar até curar a dor
+                    </p>
                     <audio src="musicas/musica4.mp3" preload="metadata"></audio>
                     <div class="custom-audio-player">
                         <button class="play-pause-btn" data-track="3"><i class="fas fa-play"></i></button>
@@ -554,6 +588,12 @@
 
                 <div class="musica">
                     <h3>Chuva de Arroz</h3>
+                    <p class="musica-descricao">
+                        Vai ser nossa cidade, nosso telefone<br>
+                        Nosso endereço, nosso apartamento<br>
+                        Sabe aquela igreja, 'to aqui na frente<br>
+                        Imaginando chuvas de arroz na gente
+                    </p>
                     <audio src="musicas/musica5.mp3" preload="metadata"></audio>
                     <div class="custom-audio-player">
                         <button class="play-pause-btn" data-track="4"><i class="fas fa-play"></i></button>
@@ -577,7 +617,7 @@
         <section style="background-color: transparent; box-shadow: none;">
             <h2>Uma Pergunta Especial para Você...</h2>
             <h3>Pq você nunca deixa de lutar por mim?</h3>
-            <p>Bom, esses dias, vc fez essa pergunta para mim, e eu te devi uma resposta, mas, na vrdd, eu já tinha a resposta, bem ali do meu lado, essa resposta, é simplesmente vc, vc é o motivo, deu nunca deixar de vc, o seu jeito de cuidar de mim, de me amar, de fazer as coisas por mim, e tbm de lutar, faz com que eu nunca, deixe de lutar por vc, pq sei que vc tbm lutaria por mim até o fim. Mas, pq ainda sim, fica a pergunta, pq eu luto por vc, se isso pode cansar, desgastar, ficar cansativo, mas, como diz "1 Coríntios 13:4-7 :O amor é paciente, o amor é bondoso. Não inveja, não se vangloria, não se orgulha. Não maltrata, não procura seus interesses, não se irrita facilmente, não guarda rancor. O amor não se alegra com a injustiça, mas se alegra com a verdade. *Tudo sofre, tudo crê, tudo espera, tudo suporta.*", ent eu prefiro sofrer o difícil ao seu lado, crê pela nossa paz, esperar o tempo necessário, mas ao seu lado, e suportar, todos e todas que estiver contra a gente. *Sempre será eu por vc, vc por mim, e duas acima de nos*. Ent meu amor, esta ai, sua resposta, vc me motiva, para eu não deixar de utar por vc, e nunca irei deixar. EU TE AMOO DMS MINHA NENEM!!♥️💍🥺</p>
+            <p>Bom, esses dias, vc fez essa pergunta para mim, e eu te devi uma resposta, mas, quando na vrdd, eu já tinha a resposta, bem ali do meu lado, essa resposta, é simplesmente vc, vc é o motivo, deu nunca deixar de lutar por vc, o seu jeito de cuidar de mim, de me amar, de fazer as coisas por mim, e tbm de lutar, faz com que eu nunca, deixe de lutar por vc, pq sei que vc tbm lutaria por mim até o fim. Mas, pq ainda sim, fica a pergunta, pq eu luto por vc, se isso pode cansar, desgastar, ficar cansativo, mas, como diz "1 Coríntios 13:4-7 :O amor é paciente, o amor é bondoso. Não inveja, não se vangloria, não se orgulha. Não maltrata, não procura seus interesses, não se irrita facilmente, não guarda rancor. O amor não se alegra com a injustiça, mas se alegra com a verdade. Tudo sofre, tudo crê, tudo espera, tudo suporta.", ent eu prefiro sofrer o difícil ao seu lado, crê pela nossa paz, esperar o tempo necessário, mas ao seu lado, e suportar, todos e todas que estiver contra a gente. Sempre será eu por vc, vc por mim, e deus acima de nos. Ent meu amor, esta ai, sua resposta, vc me motiva, para eu não deixar de lutar por vc, e nunca irei deixar. EU TE AMOO DMS MINHA NENEM!!♥💍🥺</p>
             <img id="imagem-final" src="final.png" alt="Mensagem Final">
             <p>Com todo o meu amor, para sempre seu.</p>
             <div style="text-align: center;">
